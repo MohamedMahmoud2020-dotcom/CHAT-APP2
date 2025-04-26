@@ -6,7 +6,7 @@ import { cloudinary } from "../lib/cloudinary.js";
 
 export const signup = async (req, res) => {
     try{
-        const {username, password, email} = req.body;
+        const {fullName, password, email} = req.body;
         if(password.length < 6){
             return res.status(400).json({message: "Password must be at least 6 characters."})
         }
@@ -16,7 +16,7 @@ export const signup = async (req, res) => {
         const hashPassword = await bcrypt.hash(password, salt)
         const newUser = new User(
             {email:email,
-            username: username, 
+            username: fullName, 
             password:hashPassword}
         )
         if(newUser){
@@ -28,6 +28,7 @@ export const signup = async (req, res) => {
                 email:newUser.email,
                 profilePic:newUser.profilePic
             })
+            console.log("HI from here")
         }else{
             return res.status(400).json({message: "Invalid user data"})
         }
