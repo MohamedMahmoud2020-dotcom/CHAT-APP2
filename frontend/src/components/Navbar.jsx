@@ -5,7 +5,7 @@ import { useAuthStore } from '../store/useAuthStore';
 const Navbar = () => {
     const {authUser, logout} = useAuthStore();
   return (
-    <nav className='flex justify-between items-center px-12 py-1'>
+    <nav className='flex justify-between items-center px-12 py-4 border-b-1 border-b-black'>
         <div className='flex justify-center items-center gap-2'> 
             <div className='p-1.5 rounded-xl bg-primary/10 max-w-fit'>
                 <MessageSquare className='size-6 text-primary'/>

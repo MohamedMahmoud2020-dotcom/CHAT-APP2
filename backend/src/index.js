@@ -11,7 +11,7 @@ const app = express();
 dotenv.config();
 
 
-app.use(express.json())
+app.use(express.json({ limit: '10mb' })); // or higher if needed
 app.use(cookieParser())
 app.use(cors({
     origin:"http://localhost:5173",

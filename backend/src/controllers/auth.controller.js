@@ -46,6 +46,7 @@ export const login = async (req, res) => {
     if(user){
         const isPasswordCorrect = await bcrypt.compare(password, user.password)
         if(isPasswordCorrect){
+            generateToken(user._id, res)
             res.status(200).json({
                 _id:user._id,
                 username:user.username,
@@ -80,18 +81,15 @@ export const updateProfile = async (req, res) =>{
     try {
         const {profilePic} = req.body;
         const userId = req.user._id
-
         if(!profilePic){
             return res.status(400).json({message:"Profile Picture is required"})
         }
-
         // Upload an image
         const uploadResult = await cloudinary.uploader.upload(profilePic)
-
         const updatedUser = await User.findByIdAndUpdate(userId, {profilePic:uploadResult.secure_url}, {new:true})
     } catch (error) {
         console.log("Error in the update profile controller")
-        res.status(500).json()
+        res.status(500).json({message:"Error in the updating profile"})
     }
 }
 
