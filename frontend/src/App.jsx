@@ -27,7 +27,7 @@ function App() {
   }
   
   return (
-    <div data-theme={theme} className='min-h-screen'>
+    <div data-theme={theme} className='h-screen'>
       <Toaster/>
       <Navbar/>
       <Routes>

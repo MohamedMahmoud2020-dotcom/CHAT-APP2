@@ -1,12 +1,12 @@
 import User from "../models/user.model.js"
 import Message from "../models/messages.model.js";
 import { cloudinary } from "../lib/cloudinary.js";
+
+
 export const getUsersForSidebar = async (req, res) => {
     try {
         const loggedInUserId = req.user._id;
-        console.log(loggedInUserId)
         const filteredUsers = await User.find({_id: {$ne:loggedInUserId}}).select("-password")
-        console.log(filteredUsers)
         res.status(200).json(filteredUsers)
     } catch (error) {
         console.log("Erroe in get UsersForSidebar", error)

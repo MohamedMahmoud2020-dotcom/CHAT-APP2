@@ -21,8 +21,7 @@ const ProfilePage = () => {
     if (file) {
       reader.readAsDataURL(file);
     }
-    window.location.reload();
-  };
+    };
     return (
     <div className='flex justify-center mt-8'>
       <div className='flex flex-col bg-base-300 w-1/2 rounded-xl p-4 relative'>
