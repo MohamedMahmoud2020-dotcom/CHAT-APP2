@@ -43,3 +43,11 @@ npm install
 cd backend
 npm install
 ```
+
+## 👨‍💻 Author
+Made with ❤️ by Mohamed Mahmoud
+
+GitHub: 
+
+LinkedIn: https://www.linkedin.com/in/mohamed-mahmoud-169a061b2/
+
