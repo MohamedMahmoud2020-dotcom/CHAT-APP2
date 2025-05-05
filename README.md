@@ -46,7 +46,7 @@ npm install
 
 ### ⚙️ Create .env Files
 
-####🔧 Backend .env
+**🔧 Backend .env**
 ```env
 PORT=5001
 MONGO_URI=your_mongo_uri
@@ -56,20 +56,20 @@ CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 CLIENT_URL=http://localhost:5173
 ```
-### 🔧 Frontend .env
+**🔧 Frontend .env**
 ```env
 VITE_API_BASE_URL=http://localhost:5001/api
 ```
 
-###▶️ Run the App
-####Open two terminals:
+**▶️ Run the App**
+**Open two terminals:**
 
-####Terminal 1: Frontend
+**Terminal 1: Frontend**
 ```bash
 cd frontend
 npm run dev
 ```
-####Terminal 2: Backend
+**Terminal 2: Backend**
 ```bash
 cd backend
 npm run dev
