@@ -7,7 +7,7 @@ import { useChatStore } from '../store/useChatStore'
 const HomePage = () => {
   const {selectedUser} = useChatStore();
   return (
-    <div className='mx-64 my-4 p-2 bg-base-200 flex max-h-3/4'>
+    <div className='mx-64 my-4 p-2 bg-base-200 flex max-h-3/4 min-h-3/4'>
       <Sidebar/>
       {!selectedUser ? <NoChatSelected/> : <ChatContainer/>}
     </div>

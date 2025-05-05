@@ -31,28 +31,7 @@ const Sidebar = () => {
                 </div>
             ))
         }
-        {
-            users.map((user) => (
-                <div className='flex gap-2 mt-4 cursor-pointer' onClick={() => setSelectedUser(user)}>
-                    <img src={user.profilePic || './images.jpeg'} alt="" className='w-8 h-8 rounded-full object-cover'/>
-                    <div className='flex flex-col'>
-                        <span className="font-medium truncate">{user.username}</span>
-                        <span className="text-xs text-zinc-500">Offline</span>
-                    </div>
-                </div>
-            ))
-        }
-        {
-            users.map((user) => (
-                <div className='flex gap-2 mt-4 cursor-pointer' onClick={() => setSelectedUser(user)}>
-                    <img src={user.profilePic || './images.jpeg'} alt="" className='w-8 h-8 rounded-full object-cover'/>
-                    <div className='flex flex-col'>
-                        <span className="font-medium truncate">{user.username}</span>
-                        <span className="text-xs text-zinc-500">Offline</span>
-                    </div>
-                </div>
-            ))
-        }
+                
         </div>
     </aside>
   )

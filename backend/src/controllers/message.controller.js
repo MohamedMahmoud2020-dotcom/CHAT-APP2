@@ -21,11 +21,10 @@ export const getMessages = async (req, res) =>{
         const myId = req.user._id;
         const messages = await Message.find({
             $or:[
-                {sendeId:myId, receiverId: userTochatId},
-                {sendeId:userTochatId, receiverId:myId}
+                {senderId:myId, receiverId: userTochatId},
+                {senderId:userTochatId, receiverId:myId}
             ]
         })
-
         res.status(200).json(messages)
     } catch (error) {
         console.log("Error in gettimg messages controller", error)
@@ -36,9 +35,10 @@ export const getMessages = async (req, res) =>{
 
 export const sendMessage = async (req, res)=>{
     try {
+        const {id: receiverId} = req.params;
         const {text, image} = req.body;
         const senderId = req.user._id;
-        const {id: receiverId} = req.params;
+        
         let imageUrl;
         if(image){
             const uploadResponse = await cloudinary.uploader.upload(image)
