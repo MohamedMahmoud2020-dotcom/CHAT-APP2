@@ -62,6 +62,7 @@ VITE_API_BASE_URL=http://localhost:5001/api
 ```
 
 **▶️ Run the App**
+
 **Open two terminals:**
 
 **Terminal 1: Frontend**
