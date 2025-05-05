@@ -30,18 +30,18 @@ A full-stack real-time chat application built with **MongoDB**, **Express**, **R
 
 ### 📦 Install dependencies
 
-# frontend
+frontend
 cd frontend
 npm install
 
-# backend
+backend
 cd backend
 npm install
 
 
 
 ## ⚙️ Create .env files
-# Backend .env:
+Backend .env:
 PORT=5001
 MONGO_URI=your_mongo_uri
 JWT_SECRET=your_jwt_secret
@@ -49,15 +49,15 @@ CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 
-# Frontend .env:
+Frontend .env:
 VITE_API_BASE_URL=http://localhost:5173
 
 ### ▶️ Run the app
-# in one terminal
+in one terminal
 cd frontend
 npm run dev
 
-# in another terminal
+in another terminal
 cd backend
 npm run dev
 
