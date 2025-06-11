@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { Users } from "lucide-react";
+import { useAuthStore } from "../store/useAuthStore";
 import { useChatStore } from '../store/useChatStore.js';
 const Sidebar = () => {
     const {users, getUsers, setSelectedUser} = useChatStore()
+    const { onlineUsers } = useAuthStore();
     useEffect(() => {
         getUsers();
     }, [getUsers])
@@ -23,10 +25,13 @@ const Sidebar = () => {
         {
             users.map((user) => (
                 <div className='flex gap-2 mt-4 cursor-pointer' onClick={() => setSelectedUser(user)}>
-                    <img src={user.profilePic || './images.jpeg'} alt="" className='w-8 h-8 rounded-full object-cover'/>
+                    <div className='relative'>
+                        <img src={user.profilePic || './images.jpeg'} alt="" className='w-8 h-8 rounded-full object-cover'/>
+                        {onlineUsers.includes(user._id) &&  <span className='w-2.5 h-2.5 bg-green-500 rounded-full absolute bottom-2 right-0'></span>}
+                    </div>
                     <div className='flex flex-col'>
                         <span className="font-medium truncate">{user.username}</span>
-                        <span className="text-xs text-zinc-500">Offline</span>
+                        <span className="text-xs text-zinc-500">{onlineUsers.includes(user._id) ? "online" : "offline" }</span>
                     </div>
                 </div>
             ))

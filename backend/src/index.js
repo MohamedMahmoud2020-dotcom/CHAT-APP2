@@ -5,9 +5,8 @@ import dotenv from "dotenv"
 import { connectDB } from "./lib/db.js";
 import cookieParser from "cookie-parser"
 import cors from "cors"
+import { app, io, server } from "./lib/socket.js";
 
-
-const app = express();
 dotenv.config();
 
 
@@ -21,7 +20,7 @@ app.use(cors({
 
 app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes)
-app.listen(5001, ()=>{
+server.listen(5001, ()=>{
     console.log("Server is running on port 5001");
     connectDB();
 })

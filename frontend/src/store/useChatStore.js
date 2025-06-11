@@ -1,8 +1,6 @@
 import {create} from "zustand"
 import { axiosInstance } from "../lib/axios.js"
 
-
-
 export const useChatStore = create((set) => ({
     users: [],
     messages:[],
@@ -31,5 +29,5 @@ export const useChatStore = create((set) => ({
         } catch (error) {
             console.log(error.response.data.message)
         }
-    }
+    },
 }))

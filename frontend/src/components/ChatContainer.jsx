@@ -44,7 +44,7 @@ const ChatContainer = () => {
                             <div className="w-10 rounded-full">
                             <img
                                 alt="Tailwind CSS chat bubble component"
-                                src={message.senderId == authUser._id ? authUser.profilePic : selectedUser.profilePic !== "" ? selectedUser.profilePic : "./images.jpeg"}
+                                src={message.senderId == authUser._id ? authUser.profilePic : selectedUser.profilePic || "./images.jpeg"}
                             />
                             </div>
                         </div>
